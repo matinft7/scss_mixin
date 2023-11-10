@@ -1,0 +1,9 @@
+@import "mixin/mixin";
+
+$fonts : (("name":normal,"size":16px,"weight":normal),
+          ("name":bold,"size":16px,"weight":bold),
+          ("name":"headline","size":20px,"weight":600));
+
+@include baseSetting(fontname,16px,#222,#055f50);
+@include icon((10px,20px,30px));
+@include font($fonts);

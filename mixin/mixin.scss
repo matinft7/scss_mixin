@@ -1,0 +1,50 @@
+@use "sass:map";
+@use "sass:list";
+
+//Set basic setting of your style
+@mixin baseSetting($fontFamily,$fontSize,$textColor,$linkColor){
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: $fontFamily;
+        font-size: $fontSize;
+        color: $textColor;
+    }
+    a{
+        color: $linkColor;
+    }
+}
+
+@mixin flex($direction,$wrap,$moreOption : false,$alignItems : center,$justifyContent : center){
+    display: flex;
+    flex-flow: $direction $wrap;
+    // if you want to use align-items and justify-content you can set $moreOption : true
+    @if $moreOption {
+        align-items: $alignItems;
+        justify-content: $justifyContent;
+    }
+}
+
+//Args should be like $icons : (10px,20px,30px);
+@mixin icon($sizes){
+    @each $size in $sizes{
+        .icon-#{$size}{
+            font-size: $size;
+            width: $size;
+            height: $size;
+        }
+    }
+}
+
+//Args should be like $fonts : (("name" : fontName,"size" : 2px,"weight":500));
+@mixin font($fontData){
+    @each $font in $fontData{
+        $name : map.get($font,"name");
+        .font-#{$name}{
+            $size : map.get($font,"size");
+            $weight : map.get($font,"weight");
+            font-size: $size;
+            font-weight: $weight;
+        }
+    }
+}
