@@ -31,3 +31,26 @@ output :
 ```
 ### 3.flex
 contain display flex settings such as flex-direction, flex-wrap, justify-content,align-items
+
+### 4.radius
+border radius mixin for set all 4 radius in one line.
+example :
+```
+@include radius((25px,65px,1px,0));
+@include radius((25px,65px));
+@include radius(20px);
+```
+output :
+```
+border-top-right-radius: 25px;
+border-top-left-radius: 65px;
+border-bottom-right-radius: 1px;
+border-bottom-left-radius: 0;
+
+border-top-right-radius: 25px;
+border-top-left-radius: 25px;
+border-bottom-right-radius: 65px;
+border-bottom-left-radius: 65px;
+
+border-radius: 20px;
+```
