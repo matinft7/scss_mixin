@@ -7,3 +7,13 @@ $fonts : (("name":normal,"size":16px,"weight":normal),
 @include baseSetting(fontname,16px,#222,#055f50);
 @include icon((10px,20px,30px));
 @include font($fonts);
+
+.radius{
+    @include radius((25px,65px,1px,0));
+}
+.radius-b{
+    @include radius((25px,35px));
+}
+.radius-c{
+    @include radius(20px);
+}

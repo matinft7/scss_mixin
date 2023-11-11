@@ -48,3 +48,27 @@
         }
     }
 }
+
+//Args should be like $sizes : radius((25px,65px,1px,0)); --topRight,topLeft,BottomRight,bottomLeft-- or
+//                    $sizes : radius((25px,65px)); --top,bottom-- or
+//                    $sizes : radius(25px); --all--
+@mixin radius($sizes){
+    @if list.length($sizes) == 4 {
+        border-top-right-radius: list.nth($sizes,1);
+        border-top-left-radius: list.nth($sizes,2);
+        border-bottom-right-radius: list.nth($sizes,3);
+        border-bottom-left-radius: list.nth($sizes,4);
+    }
+    @else if list.length($sizes) == 2{
+        border-top-right-radius: list.nth($sizes,1);
+        border-top-left-radius: list.nth($sizes,1);
+        border-bottom-right-radius: list.nth($sizes,2);
+        border-bottom-left-radius: list.nth($sizes,2);
+    }
+    @else if list.length($sizes) == 1{
+        border-radius: $sizes;
+    }
+    @else{
+        @error "invalid arg!";
+    }
+}
