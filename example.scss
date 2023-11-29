@@ -12,8 +12,12 @@ $fonts : (("name":normal,"size":16px,"weight":normal),
     @include radius((25px,65px,1px,0));
 }
 .radius-b{
-    @include radius((25px,35px));
+    @include radius((25px,65px));
 }
 .radius-c{
     @include radius(20px);
+}
+
+.card{
+    @include card((20px,25px),0 0 4px 0,red);
 }

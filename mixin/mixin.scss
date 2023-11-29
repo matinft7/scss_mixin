@@ -72,3 +72,10 @@
         @error "invalid arg!";
     }
 }
+
+//Args should be like @include card((20px,25px),0 0 4px 0,red);
+//radius can have 1,2 or 4 elements
+@mixin card($radius,$shadowConf,$shadowColor){
+    @include radius($radius);
+    box-shadow: $shadowConf $shadowColor;
+}
