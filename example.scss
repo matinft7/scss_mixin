@@ -19,5 +19,5 @@ $fonts : (("name":normal,"size":16px,"weight":normal),
 }
 
 .card{
-    @include card((20px,25px),0 0 4px 0,red);
+    @include card((20px,25px),5px,0 0 4px 0,red);
 }
