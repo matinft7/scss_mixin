@@ -54,3 +54,20 @@ border-bottom-left-radius: 65px;
 
 border-radius: 20px;
 ```
+### 5. card
+card mixin with shadow and radius and padding
+example :
+```
+@include card((20px,25px),5px,0 0 4px 0,red);
+```
+output :
+```
+.card {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  padding: 5px;
+  box-shadow: 0 0 4px 0 red;
+}
+```
